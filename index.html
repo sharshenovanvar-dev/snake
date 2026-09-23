@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Радостная Змейка</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <div class="stat-group">
+                <div class="score-board">Счет: <span id="score">0</span></div>
+                <div class="high-score-board">Лучший: <span id="high-score">0</span></div>
+            </div>
+            <div class="coins-board">
+                🪙 <span id="coins">0</span>
+            </div>
+        </div>
+        
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="500" height="500"></canvas>
+            
+            <div id="start-screen" class="overlay">
+                <h1>ЗМЕЙКА</h1>
+                <p>Нажмите Пробел, чтобы начать</p>
+                <p class="controls-hint">Управление: Стрелочки или WASD</p>
+                <button id="start-btn">Играть</button>
+                <button id="shop-btn-start" class="secondary-btn">🛒 Магазин</button>
+            </div>
+
+            <div id="game-over-screen" class="overlay hidden">
+                <h1>ИГРА ОКОНЧЕНА</h1>
+                <p>Счет: <span id="final-score">0</span></p>
+                <button id="restart-btn">Попробовать снова</button>
+                <button id="shop-btn-over" class="secondary-btn">🛒 Магазин</button>
+            </div>
+
+            <div id="shop-screen" class="overlay hidden shop-modal">
+                <button id="shop-close-btn" class="close-btn">✕</button>
+                <h2>Магазин</h2>
+                <div class="shop-tabs">
+                    <button class="tab-btn active" data-tab="skins">Скины</button>
+                    <button class="tab-btn" data-tab="trails">Следы</button>
+                </div>
+                <div class="shop-content">
+                    <div id="tab-skins" class="tab-pane active">
+                        <!-- Скины генерируются через JS -->
+                    </div>
+                    <div id="tab-trails" class="tab-pane">
+                        <!-- Следы генерируются через JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Мобильное управление -->
+        <div class="mobile-controls">
+            <div class="d-pad">
+                <button class="d-btn up" id="btn-up">▲</button>
+                <div class="middle-row">
+                    <button class="d-btn left" id="btn-left">◀</button>
+                    <button class="d-btn right" id="btn-right">▶</button>
+                </div>
+                <button class="d-btn down" id="btn-down">▼</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
